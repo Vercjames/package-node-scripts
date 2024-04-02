@@ -1,0 +1,47 @@
+{
+  "name": "script",
+  "private": true,
+  "license": "MIT",
+  "version": "0.0.1",
+  "description": "monitor is a node service logger",
+  "author": "https://github.com/vercjames",
+  "homepage": "https://github.com/vercjames/jforgery",
+  "repository": "https://github.com/vercjames/jforgery",
+  "bugs": "https://github.com/vercjames/jforgery/issues",
+  "main": "build/index.js",
+  "workspaces": [
+    ".",
+    "examples/with-express"
+  ],
+  "scripts": {
+    "start": "nodemon --watch packages --exec tsx packages/server.ts",
+    "express": "yarn workspace with-express run start",
+    "build": "rimraf build && tsc -p tsconfig.build.json",
+    "test": "jest",
+    "format": "eslint --fix \"./**/*.{js,ts}\"",
+    "lint:fix": "eslint --fix \"./**/*.{js,ts}\"",
+    "lint": "eslint \"./**/*.{js,ts}\""
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "tsx": "^4.7.1",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/mime": "^4.0.0",
+    "@types/node": "^20.12.2",
+    "@typescript-eslint/eslint-plugin": "^7.4.0",
+    "@typescript-eslint/parser": "^7.4.0",
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-react": "^7.34.1",
+    "express": "^4.19.2",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.0",
+    "rimraf": "^5.0.5",
+    "ts-jest": "^29.1.2",
+    "typescript": "^5.4.3"
+  }
+}
