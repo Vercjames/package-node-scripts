@@ -5,6 +5,7 @@ export type TSaveOrder = ("id" | "created" | "elapsed" | "func" | "stack")[];
 export type TConfigInput = {
   id?: string
   root?: string
+  file?: string | null
   func?: string | null
   folder?: string | null
   logText?: string | null

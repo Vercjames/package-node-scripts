@@ -18,9 +18,9 @@ import {
 // =================================================================================================
 // =================================================================================================
 class Script {
-  private id: string | null = null
+  private id: string = "xxxxxxxxxx"
 
-  private root: string | null = null
+  private root: string
 
   private func: string | null = null
 
@@ -72,6 +72,7 @@ class Script {
     return {
       id: config?.id ?? this.id,
       root: config?.root ?? this.root,
+      file: config?.file ?? this.file,
       func: config?.func ?? this.func,
       stack: (Math.floor(Math.random() * (999999 - 100000 + 1)) + 100000).toString(),
       stackTime: Date.now(),
