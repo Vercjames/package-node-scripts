@@ -17,6 +17,7 @@ export type TConfigInput = {
 export type TConfigOutput = {
   id: string
   root: string
+  file: string | null
   func: string | null
   stack: string | null
   stackTime: number | null

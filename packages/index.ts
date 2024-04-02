@@ -24,6 +24,8 @@ class Script {
 
   private func: string | null = null
 
+  private file: string | null = null
+
   private stack: string | null = "xxxxxx"
 
   private stackTime: number | null = null
@@ -179,17 +181,18 @@ class Script {
     return this
   }
 
-  public async save(folder?: string): Promise<TSaveOutput> {
+  public async save(folder?: string | null, fileName?: string | null): Promise<TSaveOutput> {
     const dateFolder = new Date().toISOString().split("T")[0]
     const logFolder = this.folder || folder
     const directoryPath: string = logFolder
       ? path.join(this.root, dateFolder, logFolder)
       : path.join(this.root, dateFolder)
 
-    const fileName = this.id ? `${this.id}.json` : "catch.json"
+    // eslint-disable-next-line no-nested-ternary
+    const jsonName = fileName ? `${fileName}.json` : (this.file ? `${this.file}.json` : "catch.json")
 
     fs.mkdirSync(directoryPath, { recursive: true })
-    const filePath = path.join(directoryPath, fileName)
+    const filePath = path.join(directoryPath, jsonName)
 
     // Handle blank JSON file
     let existingData = []
