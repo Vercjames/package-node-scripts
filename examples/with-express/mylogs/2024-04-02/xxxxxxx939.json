@@ -1,0 +1,8 @@
+[
+  {"id":"xxxxxxx939","created":"2024-04-02T19:17:16.590Z","elapsed":"00000.0040","func":"ref2Fn","stack":"258099","logType":"report","logText":"test 4"},
+  {"id":"xxxxxxx939","created":"2024-04-02T19:17:16.590Z","elapsed":"00000.0040","func":"ref2Fn","stack":"258099","logType":"report","logText":"test 3"},
+  {"id":"xxxxxxx939","created":"2024-04-02T19:17:11.401Z","elapsed":"00000.0060","func":"ref2Fn","stack":"317615","logType":"report","logText":"test 4"},
+  {"id":"xxxxxxx939","created":"2024-04-02T19:17:11.401Z","elapsed":"00000.0060","func":"ref2Fn","stack":"317615","logType":"report","logText":"test 3"},
+  {"id":"xxxxxxx939","created":"2024-04-02T19:17:10.216Z","elapsed":"00000.0100","func":"ref2Fn","stack":"288074","logType":"report","logText":"test 4"},
+  {"id":"xxxxxxx939","created":"2024-04-02T19:17:10.214Z","elapsed":"00000.0080","func":"ref2Fn","stack":"288074","logType":"report","logText":"test 3"}
+]
