@@ -18,9 +18,9 @@ import {
 // =================================================================================================
 // =================================================================================================
 class Script {
-  private id: string = "xxxxxxxxxx"
+  private id: string | null = null
 
-  private root: string
+  private root: string | null = null
 
   private func: string | null = null
 
