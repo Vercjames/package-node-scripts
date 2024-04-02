@@ -1,5 +1,5 @@
 import express from "express"
-import { script, sleep } from "node-scripts"
+import { script, sleep } from "chalk-scripts"
 
 const app = express()
 

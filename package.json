@@ -1,16 +1,15 @@
 {
-  "name": "node-scripts",
-  "private": true,
+  "name": "chalk-scripts",
   "license": "MIT",
   "version": "1.0.0",
   "description": "monitor is a node service logger",
   "author": "https://github.com/vercjames",
-  "homepage": "https://github.com/vercjames/package-node-scripts",
-  "bugs": "https://github.com/vercjames/package-node-scripts/issues",
+  "homepage": "https://github.com/vercjames/package-chalk-scripts",
+  "bugs": "https://github.com/vercjames/package-node-chalk/issues",
   "main": "build/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vercjames/package-node-scripts.git"
+    "url": "git+https://github.com/vercjames/package-chalk-scripts.git"
   },
   "scripts": {
     "start": "nodemon --watch packages --exec tsx packages/server.ts",
@@ -21,10 +20,6 @@
     "lint:fix": "eslint --fix \"./**/*.{js,ts}\"",
     "lint": "eslint \"./**/*.{js,ts}\""
   },
-  "workspaces": [
-    ".",
-    "examples/with-express"
-  ],
   "dependencies": {
     "chalk": "^5.3.0",
     "performance-now": "^2.1.0",

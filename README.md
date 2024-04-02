@@ -1,4 +1,4 @@
-Given your updated context, I'll revise the README to reflect the installation process through `npm` and clarify the dependency management, including whether users need to install `chalk` separately. If `chalk` is a dependency of `node-scripts` and is properly listed in its `package.json`, users typically won't need to install it separately. It will be installed automatically with your package.
+Given your updated context, I'll revise the README to reflect the installation process through `npm` and clarify the dependency management, including whether users need to install `chalk` separately. If `chalk` is a dependency of `chalk-scripts` and is properly listed in its `package.json`, users typically won't need to install it separately. It will be installed automatically with your package.
 
 ---
 
@@ -19,7 +19,7 @@ Node Scripts Logging Utility is a comprehensive logging module for Node.js appli
 Install the package via npm:
 
 ```bash
-npm install node-scripts
+npm install chalk-scripts
 ```
 
 This will also install necessary dependencies, including `chalk`.
@@ -31,7 +31,7 @@ This will also install necessary dependencies, including `chalk`.
 Import the `scripts` module in your project:
 
 ```javascript
-import { scripts } from 'node-scripts';
+import { scripts } from 'chalk-scripts';
 ```
 
 ### Configuration
@@ -73,8 +73,8 @@ Refer to the extensive documentation provided with the package for advanced feat
 
 ## Contributing
 
-We welcome contributions! Please submit pull requests for improvements or bug fixes to the `node-scripts` package. Follow the existing code structure and document new features for clarity.
+We welcome contributions! Please submit pull requests for improvements or bug fixes to the `chalk-scripts` package. Follow the existing code structure and document new features for clarity.
 
 ---
 
-Note: Make sure to adjust any specific instructions or package details based on how `node-scripts` is actually used and configured. The README should accurately reflect your package's capabilities and requirements.
+Note: Make sure to adjust any specific instructions or package details based on how `chalk-scripts` is actually used and configured. The README should accurately reflect your package's capabilities and requirements.
