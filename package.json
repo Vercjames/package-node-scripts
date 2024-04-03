@@ -1,7 +1,7 @@
 {
   "name": "chalk-scripts",
   "license": "MIT",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "monitor is a node service logger",
   "author": "https://github.com/vercjames",
   "homepage": "https://github.com/vercjames/package-chalk-scripts",
