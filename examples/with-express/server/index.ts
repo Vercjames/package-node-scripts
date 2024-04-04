@@ -3,6 +3,11 @@ import { script, sleep } from "chalk-scripts"
 
 const app = express()
 
+app.get("/", async (req, res) => {
+  await script.config({}).report("Writing To Logs works!").log().save()
+  res.send("Check your .logs folder!")
+})
+
 app.get("/test1", async (req, res) => {
   const ref1 = await script.start({ func: "ref1Fn" })
   script.config(ref1).report("ref1").log()
@@ -25,12 +30,9 @@ app.get("/test2", async (req, res) => {
   res.send("test complete")
 })
 
-app.get("/test3", async (req, res) => {
-  script.config({}).report("test3").log()
-  res.send("test complete")
-})
+
 
 const PORT = 4000
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`)
+  console.log(`Server running on port http://localhost${PORT}`)
 })

@@ -56,7 +56,7 @@ class Script {
         console.error("Error reading config file:", error)
       }
     }
-    this.root = config.root || "mylogs"
+    this.root = config.root || ".logs"
     this.logOrder = config.logOrder || ["id", "elapsed", "func", "stack"]
     this.saveOrder = config.saveOrder || ["id", "created", "elapsed", "func", "stack"]
   }

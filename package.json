@@ -1,7 +1,8 @@
 {
   "name": "chalk-scripts",
+  "private": true,
   "license": "MIT",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "monitor is a node service logger",
   "author": "https://github.com/vercjames",
   "homepage": "https://github.com/vercjames/package-chalk-scripts",
@@ -12,6 +13,10 @@
     "type": "git",
     "url": "git+https://github.com/vercjames/package-chalk-scripts.git"
   },
+  "workspaces": [
+    ".",
+    "examples/with-express"
+  ],
   "scripts": {
     "start": "nodemon --watch packages --exec tsx packages/server.ts",
     "with-express": "yarn workspace with-express run start",
@@ -29,9 +34,9 @@
   "devDependencies": {
     "@types/jest": "^29.5.12",
     "@types/mime": "^4.0.0",
-    "@types/node": "^20.12.2",
-    "@typescript-eslint/eslint-plugin": "^7.4.0",
-    "@typescript-eslint/parser": "^7.4.0",
+    "@types/node": "^20.12.4",
+    "@typescript-eslint/eslint-plugin": "^7.5.0",
+    "@typescript-eslint/parser": "^7.5.0",
     "eslint": "^8.57.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.29.1",
@@ -41,7 +46,7 @@
     "nodemon": "^3.1.0",
     "rimraf": "^5.0.5",
     "ts-jest": "^29.1.2",
-    "tsx": "^4.7.1",
+    "tsx": "^4.7.2",
     "typescript": "^5.4.3"
   }
 }
