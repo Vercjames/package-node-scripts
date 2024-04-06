@@ -57,7 +57,7 @@ class Script {
       }
     }
     this.root = config.root || ".logs"
-    this.logOrder = config.logOrder || ["id", "elapsed", "func", "stack"]
+    this.logOrder = config.logOrder || ["id", "elapsed", "stack"]
     this.saveOrder = config.saveOrder || ["id", "created", "elapsed", "func", "stack"]
   }
 
