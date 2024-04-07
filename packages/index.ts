@@ -123,25 +123,25 @@ class Script {
 
   public report(text: string) {
     this.logType = "report"
-    this.logText = `[REPORT] ${text}`
+    this.logText = text
     return this
   }
 
   public detail(text: string) {
     this.logType = "detail"
-    this.logText = `[DETAIL] ${text}`
+    this.logText = text
     return this
   }
 
   public alerts(text: string) {
     this.logType = "alerts"
-    this.logText = `[ALERTS] ${text}`
+    this.logText = text
     return this
   }
 
   public errors(text: string) {
     this.logType = "errors"
-    this.logText = `[ERRORS] ${text}`
+    this.logText = text
     return this
   }
 
