@@ -1,6 +1,6 @@
-export type TLogOrder = ("id" | "elapsed" | "func" | "stack")[];
-export type TSaveOrder = ("id" | "created" | "elapsed" | "func" | "stack")[];
-
+export type TLogOrder = ("id" | "elapsed" | "func" | "stack" | "type")[];
+export type TSaveOrder = ("id" | "created" | "elapsed" | "func" | "stack" | "type")[];
+export type TLogType = "default" | "success" | "warning" | "mistake" | "insight"
 // Type for input configuration with optional properties
 export type TConfigInput = {
   id?: string
@@ -11,7 +11,7 @@ export type TConfigInput = {
   logText?: string | null
   logOrder?: TLogOrder
   saveOrder?: TSaveOrder
-  logType?: "report" | "detail" | "alerts" | "errors"
+  logType?: TLogType
 }
 
 // Type for output configuration where all properties are required
@@ -26,7 +26,7 @@ export type TConfigOutput = {
   logText: string | null
   logOrder: TLogOrder
   saveOrder: TSaveOrder
-  logType: "report" | "detail" | "alerts" | "errors"
+  logType: TLogType
 }
 
 // Type for output of the saved log

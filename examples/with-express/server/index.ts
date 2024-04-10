@@ -14,7 +14,7 @@ app.get("/test1", async (req, res) => {
   await sleep(500)
   script.config(ref1).detail("ref1").log()
   await sleep(501)
-  script.config(ref1).alerts("ref1").log()
+  script.config(ref1).warning("ref1").log()
   await sleep(502)
   script.config(ref1).errors("ref1").log()
   res.send("test complete")
@@ -32,5 +32,5 @@ app.get("/test2", async (req, res) => {
 
 const PORT = 4000
 app.listen(PORT, () => {
-  console.log(`Server running on port http://localhost${PORT}`)
+  console.log(`Server running on port http://localhost:${PORT}`)
 })

@@ -10,6 +10,7 @@ import {
   TConfigOutput,
   TConstructor,
   TLogOrder,
+  TLogType,
   TSaveOrder,
   TSaveOutput
 } from "./types"
@@ -38,7 +39,7 @@ class Script {
 
   private saveOrder: TSaveOrder
 
-  private logType: "report" | "detail" | "alerts" | "errors" = "report"
+  private logType: "default" | "success" | "warning" | "mistake" | "insight" = "default"
 
   private static defaults = new Script() // Store default values
 
@@ -57,7 +58,7 @@ class Script {
       }
     }
     this.root = config.root || ".logs"
-    this.logOrder = config.logOrder || ["id", "elapsed", "stack"]
+    this.logOrder = config.logOrder || ["id", "elapsed", "stack", "type"]
     this.saveOrder = config.saveOrder || ["id", "created", "elapsed", "func", "stack"]
   }
 
@@ -108,7 +109,7 @@ class Script {
   private getElapsedTime(): string {
     const now = Date.now()
     const start = this.stackTime || Date.now()
-    return ((now - start) / 1000).toFixed(4).padStart(10, "0")
+    return ((now - start) / 1000).toFixed(4).padStart(9, "0")
   }
 
   // VER: Function to set id
@@ -121,28 +122,51 @@ class Script {
     return this
   }
 
-  public report(text: string) {
-    this.logType = "report"
+  public default(text: string) {
+    this.logType = "default"
     this.logText = text
     return this
   }
 
-  public detail(text: string) {
-    this.logType = "detail"
+  public success(text: string) {
+    this.logType = "success"
     this.logText = text
     return this
   }
 
-  public alerts(text: string) {
-    this.logType = "alerts"
+  public warning(text: string) {
+    this.logType = "warning"
     this.logText = text
     return this
   }
 
-  public errors(text: string) {
-    this.logType = "errors"
+  public mistake(text: string) {
+    this.logType = "mistake"
     this.logText = text
     return this
+  }
+
+  public insight(text: string) {
+    this.logType = "insight"
+    this.logText = text
+    return this
+  }
+
+  private getColor = (color: TLogType, text: string) => {
+    switch (color) {
+      case "success":
+        return chalk.green(text)
+      case "warning":
+        return chalk.hex("#FFA500")(text)
+      case "mistake":
+        return chalk.red(text)
+      case "insight":
+        return chalk.blue(text)
+      case "default":
+        return text
+      default:
+        return text
+    }
   }
 
   public log() {
@@ -152,30 +176,17 @@ class Script {
     const formatMap = {
       id: () => `ID: ${chalk.yellow(`[${this.id}]`)} -> `,
       elapsed: () => `Elapsed: ${chalk.yellow(`[${elapsed}]`)} -> `,
-      func: () => `fn: ${chalk.yellow(`[${this.func}]`)} -> `,
-      stack: () => (this.stack ? `Stack: ${chalk.yellow(`[${this.stack}]`)} -> ` : "")
+      func: () => `Fn: ${chalk.yellow(`[${this.func}]`)} -> `,
+      stack: () => (this.stack ? `Stack: ${chalk.yellow(`[${this.stack}]`)} -> ` : ""),
+      type: () => (this.logType ? `Type: ${this.getColor(this.logType, `[${this.logType.toUpperCase()}]`)} -> ` : "")
     }
 
     this.logOrder.forEach((key) => {
       consoleMessage += formatMap[key]?.() || ""
     })
 
-    switch (this.logType) {
-      case "detail":
-        consoleMessage += chalk.blue(`${this.logText}`)
-        break
-      case "alerts":
-        consoleMessage += chalk.hex("#FFA500")(`${this.logText}`)
-        break
-      case "errors":
-        consoleMessage += chalk.red(`${this.logText}`)
-        break
-      case "report":
-        consoleMessage += this.logText
-        break
-      default:
-        consoleMessage += this.logText
-        break
+    if (this.logText) {
+      consoleMessage += this.getColor(this.logType, this.logText)
     }
 
     console.log(consoleMessage)
@@ -207,7 +218,8 @@ class Script {
       created: new Date().toISOString(),
       elapsed: this.getElapsedTime(),
       func: this.func,
-      stack: this.stack
+      stack: this.stack,
+      type: this.logType
     }
 
     this.saveOrder.forEach((key) => {
