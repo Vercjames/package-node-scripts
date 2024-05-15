@@ -40,8 +40,8 @@ Create a `script.config.json` file in your project's root directory to customize
 
 ```json
 {
-  "root": "customlogspath",
-  "logOrder": ["id", "elapsed", "func", "stack"],
+  "root": "my/custom/log/path",
+  "logOrder": ["id", "elapsed", "stack", "func"],
   "saveOrder": ["id", "created", "elapsed", "func", "stack"]
 }
 ```
