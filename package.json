@@ -8,7 +8,7 @@
   "bugs": "https://github.com/vercjames/package-node-chalk/issues",
   "main": "build/index.js",
   "types": "build/index.d.ts",
-  "private": true,
+  "private": false,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vercjames/package-chalk-scripts.git"
