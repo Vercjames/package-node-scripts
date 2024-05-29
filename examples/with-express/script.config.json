@@ -1,3 +1,5 @@
 {
-  "root": ".logs"
+  "root": ".logs",
+  "logOrder": ["id", "elapsed", "stack", "func"],
+  "saveOrder": ["id", "created", "elapsed", "stack", "func"]
 }
