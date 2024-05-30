@@ -1,7 +1,7 @@
 {
   "name": "chalk-scripts",
   "license": "MIT",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "monitor is a node service logger",
   "author": "https://github.com/vercjames",
   "homepage": "https://github.com/vercjames/package-chalk-scripts",
@@ -20,7 +20,8 @@
   "scripts": {
     "start": "yarn build && yarn with-express",
     "with-express": "yarn workspace with-express nodemon start",
-    "build": "rimraf build && tsc -p tsconfig.build.json",
+    "build": "tsup --format cjs,esm --dts",
+    "prepublishOnly": "tsx prepublish.ts",
     "test": "node --experimental-modules --experimental-vm-modules node_modules/.bin/jest --config jest.config.ts",
     "format": "eslint --fix \"./**/*.{js,ts}\"",
     "lint:fix": "eslint --fix \"./**/*.{js,ts}\"",
@@ -48,7 +49,17 @@
     "rimraf": "^5.0.7",
     "ts-jest": "^29.1.4",
     "ts-node": "^10.9.2",
+    "tsup": "^8.0.2",
     "tsx": "^4.11.0",
     "typescript": "^5.4.5"
+  },
+  "tsup": {
+    "entry": [
+      "packages/index.ts"
+    ],
+    "outDir": "build",
+    "splitting": false,
+    "sourcemap": true,
+    "clean": true
   }
 }
