@@ -1,5 +1,8 @@
-import { script, sleep } from "../packages" // Adjust the import based on your file structure
+import { script, sleep } from "../packages"
 
+// Application Sectional || Define Tests
+// =================================================================================================
+// =================================================================================================
 describe("Script module tests", () => {
   beforeAll(() => {
     // Setup if any

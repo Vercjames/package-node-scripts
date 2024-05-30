@@ -24,7 +24,6 @@
     "prepublishOnly": "tsx prepublish.ts",
     "test": "node --experimental-modules --experimental-vm-modules node_modules/.bin/jest --config jest.config.ts",
     "format": "eslint --fix \"./**/*.{js,ts}\"",
-    "lint:fix": "eslint --fix \"./**/*.{js,ts}\"",
     "lint": "eslint \"./**/*.{js,ts}\""
   },
   "dependencies": {
