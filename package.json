@@ -2,7 +2,8 @@
   "name": "chalk-scripts",
   "license": "MIT",
   "version": "1.2.6",
-  "description": "monitor is a node service logger",
+  "description": "Advanced logging in style",
+  "keywords": ["logging", "console", "chalk"],
   "author": "https://github.com/vercjames",
   "homepage": "https://github.com/vercjames/package-chalk-scripts",
   "bugs": "https://github.com/vercjames/package-node-chalk/issues",
@@ -13,10 +14,6 @@
     "type": "git",
     "url": "git+https://github.com/vercjames/package-chalk-scripts.git"
   },
-  "workspaces": [
-    ".",
-    "examples/with-express"
-  ],
   "scripts": {
     "start": "yarn build && yarn with-express",
     "with-express": "yarn workspace with-express nodemon start",
@@ -26,6 +23,10 @@
     "format": "eslint --fix \"./**/*.{js,ts}\"",
     "lint": "eslint \"./**/*.{js,ts}\""
   },
+  "workspaces": [
+    ".",
+    "examples/with-express"
+  ],
   "dependencies": {
     "chalk": "^5.3.0",
     "performance-now": "^2.1.0",
