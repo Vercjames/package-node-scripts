@@ -1,15 +1,15 @@
 {
   "name": "chalk-scripts",
   "license": "MIT",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "description": "Advanced logging in style",
-  "keywords": ["logging", "console", "chalk"],
   "author": "https://github.com/vercjames",
   "homepage": "https://github.com/vercjames/package-chalk-scripts",
   "bugs": "https://github.com/vercjames/package-node-chalk/issues",
+  "type": "module",
   "main": "build/index.js",
   "types": "build/index.d.ts",
-  "private": false,
+  "private": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vercjames/package-chalk-scripts.git"
@@ -18,13 +18,12 @@
     "start": "yarn build && yarn with-express",
     "with-express": "yarn workspace with-express nodemon start",
     "build": "tsup --format cjs,esm --dts",
-    "prepublishOnly": "tsx prepublish.ts",
+    "prepublishOnly": "rimraf build && yarn build",
     "test": "node --experimental-modules --experimental-vm-modules node_modules/.bin/jest --config jest.config.ts",
     "format": "eslint --fix \"./**/*.{js,ts}\"",
     "lint": "eslint \"./**/*.{js,ts}\""
   },
   "workspaces": [
-    ".",
     "examples/with-express"
   ],
   "dependencies": {
