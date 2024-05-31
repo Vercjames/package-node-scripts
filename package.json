@@ -9,7 +9,7 @@
   "type": "module",
   "main": "build/index.js",
   "types": "build/index.d.ts",
-  "private": false,
+  "private": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vercjames/package-chalk-scripts.git"
